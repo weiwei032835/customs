@@ -3,7 +3,10 @@
 a {
   color: #00557f;
 }
-
+/*新增下底線*/
+span.underline {
+  text-decoration: underline;
+}
 /* 修改 Select2 容器的高度 */
 .select2-container .select2-selection--single {
   height: 40px !important;
@@ -341,7 +344,7 @@ input.form-control {
 }
 
 /*414px*/
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   .form-label{ flex: 0 0 100px;}
 }
 
