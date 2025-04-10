@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海關通關進口快遞</title>
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Include Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- 引入 Bootstrap Datepicker CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/all.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="js/common.js"></script>
+
+</head>
+
+
+<body>
+  <div class="d-flex flex-column vh-100">
+    <!-- 版頭開始 -->
+    <div class="bg-white w-100 border-bottom sticky-top py-2 px-2">
+
+      <!--container 開始-->
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+
+          <!-- 左側 LOGO 區 -->
+          <div class="header-logo">
+            <img src="./images/logo.png" alt="">
+          </div>
+
+          <!-- 右側使用者區 -->
+          <div class="d-flex align-items-center gap-3">
+            <div class="user-info d-flex align-items-center">
+              <i class="bi bi-person-fill"></i>
+              <span>○○○○○○小當家</span>
+              <i class="bi bi-caret-down-fill ms-1"></i>
+            </div>
+            <button class="btn btn-primary btn-sm">登出</button>
+          </div>
+        </div>
+      </div>
+      <!--container 結束-->
+
+    </div>
+    <!-- 版頭結束 -->
+
+    <!-- main 開始-->
+    <main class="main">
+
+      <!-- aside側欄 開始-->
+      <aside class="sidebar bg-white collapsed">
+        <!-- 展開/收縮按鈕 -->
+        <button class="btn_toggle" id="sidebar-toggle">
+          <i class="bi bi-caret-left-fill sidebar-toggle"></i>
+        </button>
+
+        <!-- 下拉選單 開始-->
+        <a href="#menu-order" class="sidebar-link active" data-bs-toggle="collapse">
+          <div class="d-flex justify-content-between px-4">
+            <h1 class="mb-0 fs-5 fw-bold">海關通關進口快遞&ensp;<i class="bi bi-dash-circle"></i></h1>
+          </div>
+        </a>
+
+        <div class="collapse" id="menu-order">
+          <a href="#" class="sidebar-link">
+            <div class="ps-5"><i class="bi bi-receipt"></i> 快遞業務申請</div>
+          </a>
+          <a href="#" class="sidebar-link active">
+            <div class="ps-5"><i class="bi bi-clipboard2-check"></i> 簡易快遞查詢</div>
+          </a>
+        </div>
+        <!-- 下拉選單 結束-->
+      </aside>
+      <!-- aside側欄 結束-->
+
+      <!-- content 開始-->
+      <div class="content">
+
+        <!--麵包屑 開始-->
+        <div class="d-flex">
+          <nav aria-label="breadcrumb" class="ms-auto">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">首頁</a></li>
+              <li class="breadcrumb-item" aria-current="page">海關通關進口快遞</li>
+              <li class="breadcrumb-item active" aria-current="page"><a href="#">簡易快遞查詢</a></li>
+            </ol>
+          </nav>
+        </div>
+        <!--麵包屑 結束-->
+
+        <!--簡易快遞查詢 開始-->
+        <div class="area search">
+          <h3 class="fs-5"><strong>簡易快遞查詢&ensp;<i class="bi bi-star"></i></strong></h3>
+
+          <select class="js-example-basic-single select-with-icon" name="state">
+            <option value="AA">我的常用功能</option>
+            <option value="BB">Wyoming</option>
+          </select>
+
+        </div>
+        <!--簡易快遞查詢 結束-->
+
+        <hr class="custom">
+
+         <!-- Toggle Button -->
+         <div class="toggle-button">
+          <button type="button" id="toggle-btn">收合內容<i class="bi bi-chevron-down"></i></button>
+        </div>
+        <!-- Toggle Button -->
+
+        <!-- form-container 簡易快遞表單 開始 -->
+        <div class="form-container toggle-content" id="toggle-content">
+          <form>
+            <!-- Row 1 開始 -->
+            <div class="form-row">
+
+              <div class="form-group">
+                <label class="form-label">* 報單狀態</label>
+                <select class="form-control js-example-basic-single" name="state">
+                  <option value="AA">全部</option>
+                  <option value="BB">Wyoming</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">年度</label>
+                <input type="text" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">報單後五碼</label>
+                <div class="input-range">
+                  <input type="text" class="form-control" placeholder="起始碼" />
+                  <span class="separator">~</span>
+                  <input type="text" class="form-control" placeholder="結束碼" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">報單類別</label>
+                <select class="form-control js-example-basic-single" name="state">
+                  <option value="AA">全部</option>
+                  <option value="BB">Wyoming</option>
+                </select>
+              </div>
+            </div>
+            <!-- Row 1 結束 -->
+
+            <!-- Row 2 開始-->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">報單號碼</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">文件編號</label>
+                <div class="input-range">
+                  <input type="text" class="form-control" placeholder="起始碼" />
+                  <span class="separator">~</span>
+                  <input type="text" class="form-control" placeholder="結束碼" />
+                </div>
+              </div>
+            </div>
+            <!-- Row 2 結束-->
+
+            <!-- Row 3 開始-->
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label class="form-label date">報單日期</label>
+
+                <div class="input-group date">
+                  <input type="text" class="form-control" id="departure-date-start" placeholder="YYY/MM/DD"><i
+                    class="bi bi-calendar-date"></i>
+                  <span class="input-group-text">~</span>
+                  <input type="text" class="form-control" id="departure-date-end" placeholder="YYY/MM/DD"><i
+                    class="bi bi-calendar-date"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Row 3 結束-->
+
+            <!-- Row 4 開始-->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">報關訊息</label>
+                <select class="form-control js-example-basic-single" name="state">
+                  <option value="AA">請選擇</option>
+                  <option value="BB">Wyoming</option>
+                </select>
+              </div>
+            </div>
+            <!-- Row 4 結束-->
+
+            <!-- Row 5 開始-->
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label class="form-label">買方資料</label>
+                <div class="input-group info">
+                  <select class="form-control js-example-basic-single" name="state">
+                    <option value="AA">買方統編</option>
+                    <option value="BB">Wyoming</option>
+                  </select>
+                  <input type="text" class="form-control info" />
+                </div>
+              </div>
+            </div>
+            <!-- Row 5 結束-->
+
+            <!-- Row 6 開始-->
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label class="form-label">賣方資料</label>
+                <div class="input-group info">
+                  <select class="form-control js-example-basic-single" name="state">
+                    <option value="AA">賣方統編</option>
+                    <option value="BB">Wyoming</option>
+                  </select>
+                  <input type="text" class="form-control info" />
+                </div>
+              </div>
+            </div>
+            <!-- Row 6 結束-->
+
+            <!-- Buttons -->
+            <div class="buttons">
+              <button type="reset">清除</button>
+              <button type="submit">查詢</button>
+            </div>
+          </form>
+        </div>
+        <!-- form-container 簡易快遞表單 結束 -->
+
+
+        <!-- 報單標題 開始 -->
+        <div class="card-header bg-transparent">
+          <h3 class="fs-5">
+            <strong><i class="bi bi-diamond-fill"></i>&ensp;報單清單</strong>
+            <button type="button" class="btn btn-danger  btn-sm ms-2 buttn">
+              刪除
+            </button>
+          </h3>
+        </div>
+        <!-- 報單標題 結束 -->
+
+        <!-- 清單 開始 -->
+        <div class="card shadow-sm">
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0 ">
+                <thead class="table-primary">
+                  <tr class="align-middle">
+                    <th scope="col">
+                      <input class="form-check-input" type="checkbox" value="" id="checkAll">
+                      <label class="form-check-label" for="checkAll">
+                      </label>
+                    </th>
+                    <th scope="col" class="text-nowrap">狀態</th>
+                    <th scope="col">傳送</th>
+                    <th scope="col" class="py-3 ps-4">主題單號碼<br>報單號碼</th>
+                    <th scope="col">報關日期<br>進口日期</th>
+                    <th scope="col">報關類別<br>報關編號</th>
+                    <th scope="col" class="pe-1 text-nowrap">艙單號碼<br>船舶航次</th>
+                    <th scope="col" class="pe-4">海關通關<br>號碼</th>
+                  </tr>
+                </thead>
+                <tbody class="text-nowrap">
+                  <tr class="align-middle">
+                    <td> <input class="form-check-input" type="checkbox" checked value="" id="checkAll">
+                      <label class="form-check-label" for="checkAll">
+                      </label>
+                    </td>
+                    <td scope="row">zzz</td>
+                    <td></td>
+                    <td>WNZ208801438<br>AX/_/09/441/E0488</td>
+                    <td>109/08/15<br>109/08/16</td>
+                    <td>X2<br>1090040123</td>
+                    <td>2033S</td>
+                    <td>092209</td>
+                  </tr>
+                  <tr class="align-middle">
+                    <td> <input class="form-check-input" type="checkbox" value="" id="checkAll">
+                      <label class="form-check-label" for="checkAll">
+                      </label>
+                    </td>
+                    <td scope="row">zzz</td>
+                    <td></td>
+                    <td>WNZ208801454<br>AX/_/09/441/E0420</td>
+                    <td>109/08/13<br>109/08/13</td>
+                    <td>X2<br>1090040377</td>
+                    <td>2809<br>2033S/N</td>
+                    <td>09VC86</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 分頁選單 開始 -->
+          <div class="pagination-container">
+            <button class="btn btn-secondary btn-sm">最前頁</button>
+            <button class="btn btn-secondary btn-sm">&lt;</button>
+
+            <span>第</span>
+            <select id="pageSelect" class="form-select form-select-sm">
+              <option value="1" selected>1</option>
+            </select>
+            <span>/ <span id="totalPages">1</span> 頁．每頁</span>
+            <select id="perPageSelect" class="form-select form-select-sm">
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+            </select>
+            <span>筆．共 <span id="totalItems">3</span> 筆</span>
+
+            <button class="btn btn-secondary btn-sm">前往</button>
+            <button class="btn btn-secondary btn-sm">&gt;</button>
+            <button class="btn btn-secondary btn-sm">最末頁</button>
+          </div>
+          <!-- 分頁選單 結束 -->
+
+        </div>
+        <!-- 清單 結束 -->
+
+      </div>
+      <!-- content 結束-->
+
+    </main>
+    <!-- main 結束-->
+
+  </div>
+
+</body>
+
+</html>
